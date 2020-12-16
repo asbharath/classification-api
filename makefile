@@ -5,7 +5,7 @@ build:
 	docker build -t bharath/classification_api:upstride-1.0 -f dockerfiles/upstride.dockerfile .
 
 run:
-	@docker run -it --rm --runtime=nvidia --privileged \
+	@docker run -it --rm --gpus all --privileged \
 		--name exp_mobilenetv3 \
 		-v $$(pwd):/opt \
 		-v ~/tensorflow_datasets/:/root/tensorflow_datasets \
